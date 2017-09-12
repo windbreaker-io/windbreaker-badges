@@ -17,6 +17,14 @@ const badgeNameToBadgeMap = {
   enabled: {
     colorscheme: 'brightgreen',
     text: ['Windbreaker', 'enabled']
+  },
+  disabled: {
+    colorscheme: 'lightred',
+    text: ['Windbreaker', 'disabled']
+  },
+  notFound: {
+    colorscheme: 'lightgray',
+    text: ['Windbreaker', 'not found']
   }
 }
 
