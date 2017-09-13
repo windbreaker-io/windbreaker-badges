@@ -1,6 +1,6 @@
 FROM node:8.4.0-alpine
 
-ENV HOME=/usr/windbreaker-hooks
+ENV HOME=/usr/windbreaker-badges
 
 RUN mkdir -p $HOME
 

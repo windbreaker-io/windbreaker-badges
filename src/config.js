@@ -1,8 +1,8 @@
 const configUtil = require('windbreaker-service-util/config')
 const path = require('path')
 
-const BadgesServiceConfig = require('~/src/models/BadgesServiceConfig')
-const config = module.exports = new BadgesServiceConfig()
+const ServiceConfig = require('~/src/models/ServiceConfig')
+const config = module.exports = new ServiceConfig()
 
 const configDirectoryPath = path.join(__dirname, '../config')
 

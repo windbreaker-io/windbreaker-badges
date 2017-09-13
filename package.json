@@ -1,12 +1,12 @@
 {
-  "name": "windbreaker-hooks",
+  "name": "windbreaker-badges",
   "version": "0.0.1",
   "description": "",
   "main": "src/run-server.js",
   "scripts": {
     "lint": "eslint .",
     "migrate:local": "knex migrate:latest --env $SERVICE_ENVIRONMENT --knexfile ./src/dao/knexfile.js",
-    "docker:start": "docker-compose run windbreaker-hooks",
+    "docker:start": "docker-compose run windbreaker-badges",
     "docker:stop": "docker-compose down",
     "docker:rebuild:test": "docker-compose build --no-cache test",
     "pretest": "npm run lint",

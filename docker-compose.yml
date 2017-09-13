@@ -1,13 +1,13 @@
 version: '3'
 services:
-  windbreaker-hooks:
+  windbreaker-badges:
     build: .
     command: 'npm start'
     depends_on:
       - postgres
     volumes:
-      - .:/usr/windbreaker-hooks
-      - /usr/windbreaker-hooks/node_modules
+      - .:/usr/windbreaker-badges
+      - /usr/windbreaker-badges/node_modules
     environment:
       SERVICE_ENVIRONMENT: 'docker'
   test:
@@ -16,8 +16,8 @@ services:
     depends_on:
       - postgres
     volumes:
-      - .:/usr/windbreaker-hooks
-      - /usr/windbreaker-hooks/node_modules
+      - .:/usr/windbreaker-badges
+      - /usr/windbreaker-badges/node_modules
     environment:
       SERVICE_ENVIRONMENT: 'docker'
   postgres:
