@@ -3,16 +3,27 @@ services:
   windbreaker-badges:
     build: .
     command: 'npm start'
+    depends_on:
+      - rediscluster
     volumes:
       - .:/usr/windbreaker-badges
       - /usr/windbreaker-badges/node_modules
+      # uncomment to link and/or replace first path if service utils are located elsewhere
+      # - ../windbreaker-service-util:/usr/windbreaker-badges/node_modules/windbreaker-service-util    
     environment:
       SERVICE_ENVIRONMENT: 'docker'
   test:
     build: .
     command: 'npm run test:docker:ci'
+    depends_on:
+      - rediscluster
     volumes:
       - .:/usr/windbreaker-badges
       - /usr/windbreaker-badges/node_modules
     environment:
       SERVICE_ENVIRONMENT: 'docker'
+  rediscluster:
+    image: 'grokzen/redis-cluster'
+    ports:
+      - 7000
+      - 7001

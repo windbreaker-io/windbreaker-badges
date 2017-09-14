@@ -1,5 +1,5 @@
 redisClusterNodes:
-  - host: '127.0.0.1'
+  - host: rediscluster
     port: 7000
-  - host: '127.0.0.1'
-    port: 7000
+  - host: rediscluster
+    port: 7001
