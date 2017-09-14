@@ -5,7 +5,6 @@
   "main": "src/run-server.js",
   "scripts": {
     "lint": "eslint .",
-    "migrate:local": "knex migrate:latest --env $SERVICE_ENVIRONMENT --knexfile ./src/dao/knexfile.js",
     "docker:start": "docker-compose run windbreaker-badges",
     "docker:stop": "docker-compose down",
     "docker:rebuild:test": "docker-compose build --no-cache test",
@@ -13,8 +12,8 @@
     "test": "docker-compose run test",
     "posttest": "npm run docker:stop",
     "test:unit": "nyc ava test/unit",
-    "test:integration": "docker-compose run test && npm run migrate:local && nyc ava test/integration; npm run docker:stop",
-    "test:docker:ci": "npm run migrate:local && nyc ava test/unit test/integration/*-test.js --verbose",
+    "test:integration": "docker-compose run test && nyc ava test/integration; npm run docker:stop",
+    "test:docker:ci": "nyc ava test/unit test/integration/*-test.js --verbose",
     "start": "browser-refresh src/run-server.js",
     "cluster:start": "browser-refresh src/cluster.js"
   },
@@ -35,15 +34,10 @@
   "dependencies": {
     "fashion-model-defaults": "^1.0.2",
     "gh-badges": "^1.3.0",
-    "js-yaml": "^3.9.1",
-    "knex": "^0.13.0",
     "koa": "^2.3.0",
-    "koa-body": "^2.3.0",
-    "koa-bodyparser": "^4.2.0",
-    "koa-path-router": "^0.1.1",
+    "koa-path-router": "^1.0.0",
     "koa-router": "^7.2.1",
     "n-level-cache": "^1.0.3",
-    "queue": "^4.2.1",
     "require-self-ref": "^2.0.1",
     "task-list": "^1.0.5",
     "uuid": "^3.0.1",
@@ -61,7 +55,6 @@
     "get-port-sync": "^1.0.0",
     "git-hooks": "^1.1.8",
     "nyc": "^11.1.0",
-    "porti": "^1.0.3",
     "sinon": "^2.4.1",
     "superagent": "^3.5.2"
   }
