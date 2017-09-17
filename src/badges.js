@@ -36,3 +36,7 @@ exports.create = async function () {
     exports[badgeName] = await badge(badgeOptions)
   }
 }
+
+exports.getBadgeNameToBadgeMap = function () {
+  return badgeNameToBadgeMap
+}
