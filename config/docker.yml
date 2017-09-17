@@ -1,0 +1,5 @@
+redisClusterNodes:
+  - host: rediscluster
+    port: 7000
+  - host: rediscluster
+    port: 7001
